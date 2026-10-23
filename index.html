@@ -323,6 +323,14 @@ footer .strong{color:var(--yellow);font-family:'Bungee',cursive;font-size:.72rem
 @media(max-width:34rem){
   .event{grid-template-columns:1fr}
   .event .date{max-width:9rem;margin:0 auto}
+  .hero::before{
+    transform:perspective(450px) rotateX(62deg) scale(1.4);
+  }
+}
+@media(max-width:22rem){
+  .hero::before{
+    transform:perspective(450px) rotateX(62deg) scale(1);
+  }
 }
 </style>
 </head>
