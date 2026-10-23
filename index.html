@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projektchor &quot;Die 80er&quot; – MGV Altendiez gegr. 1902 e.V.</title>
+<meta name="description" content="Projektchor &quot;Die 80er&quot; des MGV Altendiez – alle Infos, Termine und Proben auf einen Blick. Offen für alle, keine Chorerfahrung nötig.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%B8%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Monoton&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --pink:#ff2d95;
+  --cyan:#00f0ff;
+  --yellow:#ffe600;
+  --purple:#8a2be2;
+  --orange:#ff6a00;
+  --green:#39ff14;
+  --dark:#0d0221;
+  --dark2:#190938;
+  --light:#f5f0ff;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Rubik',sans-serif;
+  background:var(--dark);
+  color:var(--light);
+  line-height:1.65;
+  overflow-x:hidden;
+}
+h1,h2,h3{font-family:'Bungee',cursive;font-weight:400;line-height:1.15}
+a{color:var(--cyan)}
+
+/* ---------- HERO ---------- */
+.hero{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  position:relative;
+  padding:6rem 1.5rem 7rem;
+  background:
+    radial-gradient(ellipse at 50% 115%, rgba(255,45,149,.55) 0%, transparent 55%),
+    radial-gradient(ellipse at 15% 100%, rgba(138,43,226,.5) 0%, transparent 50%),
+    radial-gradient(ellipse at 85% 100%, rgba(255,106,0,.4) 0%, transparent 50%),
+    linear-gradient(180deg,#0d0221 0%, #240046 60%, #5a189a 85%, #ff2d95 100%);
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  left:0;right:0;bottom:0;
+  height:38vh;
+  background:
+    repeating-linear-gradient(90deg, rgba(0,240,255,.28) 0 2px, transparent 2px 90px),
+    repeating-linear-gradient(0deg, rgba(0,240,255,.28) 0 2px, transparent 2px 70px);
+  transform:perspective(450px) rotateX(62deg) scale(2.6);
+  transform-origin:bottom center;
+  pointer-events:none;
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(ellipse at center, transparent 55%, rgba(13,2,33,.85) 100%);
+  pointer-events:none;
+}
+.association{
+  position:relative;
+  z-index:2;
+  font-family:'Monoton',cursive;
+  font-size:clamp(.8rem,2vw,1.1rem);
+  letter-spacing:.35em;
+  color:var(--yellow);
+  text-transform:uppercase;
+  margin-bottom:1.2rem;
+  text-shadow:0 0 12px rgba(255,230,0,.8);
+}
+.hero h1{
+  position:relative;z-index:2;
+  font-size:clamp(2.6rem,9vw,6.5rem);
+  text-transform:uppercase;
+  color:var(--light);
+  text-shadow:
+    3px 3px 0 var(--pink),
+    6px 6px 0 var(--purple),
+    10px 10px 25px rgba(0,0,0,.6);
+}
+.hero h1 .eighties{
+  display:block;
+  font-family:'Monoton',cursive;
+  font-size:clamp(3.2rem,12vw,9rem);
+  background:linear-gradient(180deg,var(--yellow) 0%,var(--orange) 45%,var(--pink) 70%,var(--purple) 100%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  filter:drop-shadow(0 0 18px rgba(255,45,149,.75));
+  letter-spacing:.06em;
+}
+.hero .tagline{
+  position:relative;z-index:2;
+  margin-top:1.4rem;
+  font-size:clamp(1rem,2.6vw,1.35rem);
+  color:var(--cyan);
+  text-shadow:0 0 14px rgba(0,240,255,.9);
+  max-width:34rem;
+}
+.cta-row{
+  position:relative;z-index:2;
+  display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;
+  margin-top:2.4rem;
+}
+.btn{
+  font-family:'Bungee',cursive;
+  text-transform:uppercase;
+  text-decoration:none;
+  padding:.9rem 1.8rem;
+  border-radius:.4rem;
+  font-size:.95rem;
+  letter-spacing:.05em;
+  transition:transform .15s ease, box-shadow .15s ease;
+  display:inline-block;
+}
+.btn-primary{
+  color:var(--dark);
+  background:var(--yellow);
+  box-shadow:5px 5px 0 var(--pink);
+}
+.btn-secondary{
+  color:var(--dark);
+  background:var(--cyan);
+  box-shadow:5px 5px 0 var(--purple);
+}
+.btn:hover{transform:translate(-2px,-2px)}
+.btn:active{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--pink)}
+
+/* ---------- NAV ---------- */
+.nav{
+  position:sticky;top:0;z-index:50;
+  display:flex;justify-content:center;gap:.5rem;flex-wrap:wrap;
+  padding:.8rem 1rem;
+  background:rgba(13,2,33,.92);
+  backdrop-filter:blur(6px);
+  border-bottom:3px solid var(--pink);
+}
+.nav a{
+  font-family:'Bungee',cursive;
+  font-size:.78rem;
+  text-transform:uppercase;
+  text-decoration:none;
+  color:var(--light);
+  padding:.45rem .9rem;
+  border-radius:.3rem;
+  transition:color .15s, background .15s;
+}
+.nav a:hover{color:var(--yellow);background:rgba(255,45,149,.18)}
+
+/* ---------- SECTIONS ---------- */
+main{max-width:64rem;margin:0 auto;padding:0 1.25rem}
+section{padding:4.5rem 0}
+.section-title{
+  font-size:clamp(1.6rem,4.5vw,2.6rem);
+  text-transform:uppercase;
+  margin-bottom:2.2rem;
+  display:inline-block;
+  position:relative;
+  padding-bottom:.5rem;
+}
+.section-title::after{
+  content:"";
+  position:absolute;left:0;bottom:0;
+  width:100%;height:5px;
+  background:linear-gradient(90deg,var(--pink) 0%,var(--purple) 40%,var(--cyan) 75%,var(--yellow) 100%);
+  border-radius:3px;
+}
+#ueber .section-title{color:var(--pink);text-shadow:2px 2px 0 var(--purple)}
+#fuer-wen .section-title{color:var(--green);text-shadow:2px 2px 0 rgba(57,255,20,.35)}
+#termine .section-title{color:var(--cyan);text-shadow:2px 2px 0 var(--purple)}
+#ort .section-title{color:var(--yellow);text-shadow:2px 2px 0 var(--orange)}
+#kontakt .section-title{color:var(--orange);text-shadow:2px 2px 0 var(--pink)}
+
+.card-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));
+  gap:1.4rem;
+}
+.card{
+  background:var(--dark2);
+  border:2px solid rgba(0,240,255,.35);
+  border-radius:.7rem;
+  padding:1.6rem;
+  box-shadow:6px 6px 0 rgba(138,43,226,.45);
+  transition:transform .15s ease;
+}
+.card:hover{transform:translate(-2px,-2px)}
+.card h3{
+  font-size:1.05rem;
+  margin-bottom:.7rem;
+  color:var(--yellow);
+}
+.card p{font-size:.97rem;color:#d8ccf0}
+.badge{
+  display:inline-block;
+  font-family:'Bungee',cursive;
+  font-size:.62rem;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  padding:.28rem .6rem;
+  border-radius:99px;
+  margin-bottom:.9rem;
+}
+.badge-pink{background:var(--pink);color:var(--light)}
+.badge-cyan{background:var(--cyan);color:var(--dark)}
+.badge-yellow{background:var(--yellow);color:var(--dark)}
+
+/* Für-wen list */
+.check-list{list-style:none;display:grid;gap:1.1rem;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr))}
+.check-list li{
+  display:flex;gap:.8rem;align-items:flex-start;
+  background:var(--dark2);
+  border-left:6px solid var(--green);
+  border-radius:.5rem;
+  padding:1.15rem 1.3rem;
+  box-shadow:4px 4px 0 rgba(57,255,20,.25);
+}
+.check-list .icon{
+  flex:0 0 auto;
+  width:2rem;height:2rem;
+  border-radius:50%;
+  background:var(--green);
+  color:var(--dark);
+  display:flex;align-items:center;justify-content:center;
+  font-weight:700;
+  box-shadow:0 0 14px rgba(57,255,20,.7);
+}
+.check-list strong{display:block;color:var(--light);margin-bottom:.2rem;font-family:'Bungee',cursive;font-weight:400;font-size:.9rem}
+.check-list span{color:#d8ccf0;font-size:.93rem}
+
+/* Termine */
+.timeline{display:grid;gap:1.3rem}
+.event{
+  display:grid;
+  grid-template-columns:7rem 1fr;
+  gap:1.2rem;
+  background:var(--dark2);
+  border:2px solid rgba(255,45,149,.45);
+  border-radius:.7rem;
+  padding:1.3rem 1.5rem;
+  box-shadow:6px 6px 0 rgba(0,240,255,.3);
+}
+.event:nth-child(even){border-color:rgba(0,240,255,.5);box-shadow:6px 6px 0 rgba(255,45,149,.3)}
+.event .date{
+  font-family:'Bungee',cursive;
+  text-align:center;
+  align-self:center;
+  padding:.6rem .4rem;
+  border-radius:.5rem;
+  background:linear-gradient(160deg,var(--purple),var(--pink));
+  box-shadow:0 0 16px rgba(255,45,149,.5);
+}
+.event:nth-child(even) .date{background:linear-gradient(160deg,var(--purple),var(--cyan));box-shadow:0 0 16px rgba(0,240,255,.5)}
+.event .date .day{display:block;font-size:1.7rem;line-height:1}
+.event .date .month{display:block;font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;opacity:.9}
+.event h3{font-size:1rem;margin-bottom:.3rem;color:var(--yellow)}
+.event:nth-child(even) h3{color:var(--cyan)}
+.event p{font-size:.94rem;color:#d8ccf0}
+.event .meta{font-size:.85rem;color:var(--cyan);margin-top:.4rem}
+.event:nth-child(even) .meta{color:var(--pink)}
+.note{
+  margin-top:1.5rem;
+  padding:1.1rem 1.3rem;
+  background:rgba(255,230,0,.08);
+  border:2px dashed var(--yellow);
+  border-radius:.6rem;
+  font-size:.9rem;
+  color:#f0e8c8;
+}
+
+/* Ort */
+.ort-wrap{display:grid;grid-template-columns:1fr;gap:1.5rem}
+.map-box{
+  border:2px solid var(--yellow);
+  border-radius:.7rem;
+  overflow:hidden;
+  box-shadow:6px 6px 0 rgba(255,106,0,.4);
+}
+.map-box iframe{display:block;width:100%;height:24rem;border:0;filter:hue-rotate(200deg) saturate(1.4) contrast(1.05)}
+
+/* Kontakt */
+.kontakt-box{
+  text-align:center;
+  background:var(--dark2);
+  border:2px solid var(--orange);
+  border-radius:.7rem;
+  padding:2.4rem 1.5rem;
+  box-shadow:6px 6px 0 var(--pink);
+}
+.kontakt-box .mail{
+  font-family:'Bungee',cursive;
+  font-size:clamp(.95rem,3vw,1.35rem);
+  color:var(--yellow);
+  text-decoration:none;
+  word-break:break-all;
+  transition:color .15s;
+}
+.kontakt-box .mail:hover{color:var(--cyan)}
+
+/* Footer */
+footer{
+  margin-top:3rem;
+  padding:2.4rem 1.25rem 3rem;
+  text-align:center;
+  background:linear-gradient(180deg,transparent, rgba(255,45,149,.14));
+  border-top:3px solid var(--purple);
+  font-size:.85rem;
+  color:#b9a9e0;
+}
+footer .strong{color:var(--yellow);font-family:'Bungee',cursive;font-size:.72rem;text-transform:uppercase;letter-spacing:.1em}
+
+@media(max-width:34rem){
+  .event{grid-template-columns:1fr}
+  .event .date{max-width:9rem;margin:0 auto}
+}
+</style>
+</head>
+<body>
+
+<header class="hero" id="start">
+  <p class="association">MGV Altendiez gegr. 1902 e.V. präsentiert</p>
+  <h1>Projektchor<span class="eighties">Die 80er</span></h1>
+  <p class="tagline">Mitmach-Chor im Zeichen der Achtziger &ndash; mit dem Ziel: Auftritt beim 125-jährigen Jubiläum des MGV Altendiez.</p>
+  <div class="cta-row">
+    <a class="btn btn-primary" href="#termine">Termine &amp; Proben</a>
+    <a class="btn btn-secondary" href="#kontakt">Mitmachen</a>
+  </div>
+</header>
+
+<nav class="nav" aria-label="Hauptnavigation">
+  <a href="#start">Start</a>
+  <a href="#ueber">Über</a>
+  <a href="#fuer-wen">Für wen?</a>
+  <a href="#termine">Termine &amp; Proben</a>
+  <a href="#ort">Ort</a>
+  <a href="#kontakt">Kontakt</a>
+</nav>
+
+<main>
+  <section id="ueber">
+    <h2 class="section-title">Über den Projektchor</h2>
+    <div class="card-grid">
+      <article class="card">
+        <span class="badge badge-pink">Das Projekt</span>
+        <h3>Ein Chor &ndash; ein Ziel</h3>
+        <p>Gemeinsam mit dem MGV Altendiez gegr. 1902 e.V. entsteht ein Projektchor rund um die Musik der 80er Jahre &ndash; von Kult-Hits bis zu Gänsehaut-Momenten. Das gro&szlig;e Finale: der Auftritt beim <strong>125-jährigen Jubiläum</strong> des Vereins.</p>
+      </article>
+      <article class="card">
+        <span class="badge badge-cyan">Das Konzept</span>
+        <h3>Einfach mitmachen</h3>
+        <p>Ein zeitlich begrenztes Projekt statt Dauer-Verpflichtung: Wer Lust auf Singen hat, ist herzlich willkommen &ndash; ganz ohne Chorerfahrung und ohne langfristige Bindung.</p>
+      </article>
+      <article class="card">
+        <span class="badge badge-yellow">Das Ziel</span>
+        <h3>Jubiläums-Auftritt</h3>
+        <p>Am <strong>Samstag, 05.06.27</strong> feiert der MGV Altendiez sein 125-jähriges Bestehen &ndash; und der Projektchor &quot;Die 80er&quot; wird dazu auf der Bühne stehen.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="fuer-wen">
+    <h2 class="section-title">Für wen?</h2>
+    <ul class="check-list">
+      <li><span class="icon">✓</span><div><strong>Offen für alle</strong><span>Ob jung oder jung geblieben, Mitglied oder nicht &ndash; jede und jeder ist willkommen.</span></div></li>
+      <li><span class="icon">✓</span><div><strong>Keine Chorerfahrung nötig</strong><span>Notenlesen, Vorerfahrung, Vorsingen &ndash; alles nicht nötig. Hauptsache, du hast Lust zu singen.</span></div></li>
+      <li><span class="icon">✓</span><div><strong>Keine langfristige Verpflichtung</strong><span>Das Projekt ist befristet &ndash; nach dem Jubiläums-Auftritt ist Schluss (oder auch nicht 😉).</span></div></li>
+    </ul>
+  </section>
+
+  <section id="termine">
+    <h2 class="section-title">Termine &amp; Proben</h2>
+    <div class="timeline">
+      <article class="event">
+        <div class="date"><span class="day">24.</span><span class="month">Nov. 26</span></div>
+        <div>
+          <h3>Infotreffen</h3>
+          <p>Alles Wichtige zum Projektchor &quot;Die 80er&quot;: Ablauf, Musik, Stimmlagen und Antworten auf alle Fragen. Schnuppern ausdrücklich erlaubt!</p>
+          <p class="meta">Dienstag, 24.11.2026 &middot; 18:30 Uhr</p>
+        </div>
+      </article>
+      <article class="event">
+        <div class="date"><span class="day">12.</span><span class="month">Jan. 27</span></div>
+        <div>
+          <h3>Erste Projektchorprobe</h3>
+          <p>Los geht&rsquo;s mit den ersten Songs. Wer beim Infotreffen nicht dabei war, kann auch hier direkt einsteigen.</p>
+          <p class="meta">Dienstag, 12.01.2027 &middot; 18:30 Uhr</p>
+        </div>
+      </article>
+      <article class="event">
+        <div class="date"><span class="day">05.</span><span class="month">Juni 27</span></div>
+        <div>
+          <h3>125-jähriges Jubiläum des MGV Altendiez</h3>
+          <p>Das gro&szlig;e Ziel: Auftritt des Projektchors &quot;Die 80er&quot; beim Jubiläumsfest des MGV Altendiez gegr. 1902 e.V.</p>
+          <p class="meta">Samstag, 05.06.2027</p>
+        </div>
+      </article>
+    </div>
+    <p class="note">ℹ️ Regul&auml;re Proben: dienstags um 18:30 Uhr im Gemeindehaus Altendiez. Weitere Probentermine werden hier bekanntgegeben &ndash; einfach vorbei schauen oder per E-Mail nachfragen.</p>
+  </section>
+
+  <section id="ort">
+    <h2 class="section-title">Wo findet alles statt?</h2>
+    <div class="ort-wrap">
+      <div class="card">
+        <h3>Gemeindehaus Altendiez</h3>
+        <p>Feldstr. 2<br>65624 Altendiez</p>
+        <p style="margin-top:.8rem">Infotreffen, Proben &ndash; alles unter einem (neonbeleuchteten) Dach.</p>
+      </div>
+      <div class="map-box">
+        <iframe title="Karte: Gemeindehaus Altendiez, Feldstr. 2" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.openstreetmap.org/export/embed.html?bbox=8.0%2C50.37%2C8.12%2C50.43&amp;layer=mapnik&amp;marker=50.3989%2C8.0649"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontakt">
+    <h2 class="section-title">Kontakt &amp; Mitmachen</h2>
+    <div class="kontakt-box">
+      <p>Du hast Fragen zum Projektchor oder m&ouml;chtest direkt mitmachen? Schreib uns einfach eine E-Mail:</p>
+      <p style="margin-top:1.1rem"><a class="mail" href="mailto:vorstand@singalong-altendiez.de">vorstand@singalong-altendiez.de</a></p>
+      <p style="margin-top:1.1rem;font-size:.9rem;color:#d8ccf0">Oder sprich uns einfach beim Infotreffen pers&ouml;nlich an &ndash; wir freuen uns auf dich! 🎤</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p class="strong">Projektchor &quot;Die 80er&quot;</p>
+  <p>Eine Aktion des MGV Altendiez gegr. 1902 e.V. &middot; Gemeindehaus, Feldstr. 2, 65624 Altendiez</p>
+  <p style="margin-top:.5rem"><a href="mailto:vorstand@singalong-altendiez.de" style="color:var(--cyan)">vorstand@singalong-altendiez.de</a></p>
+</footer>
+
+</body>
+</html>
