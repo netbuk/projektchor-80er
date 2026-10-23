@@ -23,9 +23,22 @@ Termine stehen im Abschnitt `<!-- Termine -->` (`<section id="termine">`). Ein T
 </article>
 ```
 
+## Änderungen & Ergänzungen (Workflow)
+
+Änderungen an der Website laufen über Branch und Pull Request, damit `main` (und damit die Liveseite) immer stabil bleibt:
+
+1. Branch anlegen, z. B. `vibe/neuer-termin`
+2. Änderung in `index.html` committen und pushen
+3. Pull Request nach `main` öffnen
+4. Nach Review: mergen – GitHub Pages aktualisiert die Liveseite automatisch
+
+Ausnahme: Schnellschübe wie Tippfehler können direkt auf `main` erfolgen.
+
 ## Hosting
 
 Die Seite wird über **GitHub Pages** aus dem `main`-Branch (`root`) ausgeliefert: <https://netbuk.github.io/projektchor-80er/>
+
+Einmalige Aktivierung: *Settings → Pages → Source: Deploy from a branch → `main` / `/ (root)`*.
 
 ## Design
 
